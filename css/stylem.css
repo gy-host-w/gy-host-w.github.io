@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background-image: url("../img/background.png");
+    background-size: 100%; /* 宽度设为100%，高度自动调整 */
+    background-attachment: fixed; /* 关键属性，使背景固定 */
+    background-position: center;
+    align-items: center;
+}
+
+/* Header/Blog Title */
+.header {
+    display: flex;
+    align-items: center;
+}
+.header img{
+    height: 70px;
+    margin-left:10px;
+}
+.header h1 {
+    flex: auto;
+    font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    position: sticky;
+    overflow: hidden;
+    background-color: #bdb6ec;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #91defe;
+    color: black;
+}
+
+
+.messages {
+    width: 80%;
+    max-width: 800px;
+    /*padding: 50px 100px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, .6), rgba(255, 255, 255, .3), rgba(255, 255, 255, .2));
+    background-color: rgba(255, 255, 255, 0.266);
+    border-radius: 40px;
+    box-shadow: 0 10px 50px #00000019;
+    margin: 0 auto;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    width: 95%;
+    padding-bottom: 90px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+input,
+textarea {
+    border: none;
+    color: #000;
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-size: 24px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+}
+
+#username {
+    height: 60px;
+}
+
+#message {
+    height: auto;
+    min-height: 150px;
+}
+
+.messages h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 60px;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 5px;
+}
+
+#submitBtn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-image: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+    border: none;
+    font-size: 24px;
+    letter-spacing: 2px;
+    width: 200px;
+    height: 60px;
+    border-radius: 50px;
+}
+
+#messageBoard {
+    width: 95%;
+    text-align: left;
+}
+
+@keyframes messageFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.message {
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px;
+    opacity: 0;
+    animation: messageFadeIn 0.5s ease forwards;
+    background-image: linear-gradient(90deg, #8ec5fc 0%, #e0c3fc 100%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px #00000026;
+    text-shadow: 0px 0px 10px #ffffff;
+}
+
+.message-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 5px #fff solid;
+}
+
+.info strong {
+    margin-left: 10px;
+}
+
+.message-info span {
+    font-size: 18px;
+}
+
+.content {
+    font-size: 24px;
+    margin: 20px 0;
+    width: 100%;
+}
+/* Footer */
+.footer {
+    /*    position:sticky;*/
+    padding: 5px;
+    text-align: center;
+    background: #bdb6ec;
+    bottom: 0;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 800px) {
+    .topnav a {
+        width: 100%; /* 使导航链接占满父容器宽度 */
+        text-align: left; /* 左对齐文本以适应较小屏幕 */
+    }
+    body {
+        font-family: Arial;
+        padding: 10px;
+        background-image: url("../img/background1.png");
+        background-size: 100%; /* 宽度设为100%，高度自动调整 */
+        background-attachment: fixed; /* 关键属性，使背景固定 */
+        background-position: center;
+    }
+    .messages {
+        width: 90%; /* 在较小屏幕上增加宽度 */
+    }
+    .messages h1 {
+        font-size: 48px; /* 调整标题字体大小以适应较小屏幕 */
+    }
+    input,
+    textarea {
+        font-size: 20px; /* 调整输入框和文本区域的字体大小以适应较小屏幕 */
+    }
+    #submitBtn {
+        font-size: 20px; /* 调整按钮字体大小以适应较小屏幕 */
+        width: 180px; /* 调整按钮宽度以适应较小屏幕 */
+        height: 50px; /* 调整按钮高度以适应较小屏幕 */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .topnav a {
+        width: 100%;
+        text-align: left;
+    }
+    .messages {
+        width: 95%; /* 在非常小的屏幕上进一步增加宽度 */
+    }
+    .messages h1 {
+        font-size: 36px; /* 在非常小的屏幕上进一步调整标题字体大小 */
+    }
+    input,
+    textarea {
+        font-size: 10px; /* 在非常小的屏幕上进一步调整输入框和文本区域的字体大小 */
+    }
+    #submitBtn {
+        font-size: 10px; /* 在非常小的屏幕上进一步调整按钮字体大小 */
+        width: 160px; /* 在非常小的屏幕上进一步调整按钮宽度 */
+        height: 45px; /* 在非常小的屏幕上进一步调整按钮高度 */
+    }
+}

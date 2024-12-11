@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background-image: url("../img/background.png");
+    background-size: 100%; /* 宽度设为100%，高度自动调整 */
+    background-attachment: fixed; /* 关键属性，使背景固定 */
+    background-position: center;
+}
+
+/* Header/Blog Title */
+.header {
+    display: flex;
+    align-items: center;
+}
+.header img{
+    height: 70px;
+    margin-left:10px;
+}
+.header h1 {
+    flex: auto;
+    font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    position: sticky;
+    overflow: hidden;
+    background-color: #bdb6ec;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #91defe;
+    color: black;
+}
+
+
+
+@keyframes slide-fade-in {
+    from {
+        opacity: 0;
+        box-shadow: none;
+        transform: scale(.8) translateY(15vh);
+    }
+}
+
+.cards {
+    display: grid;
+    gap: 2rem;
+    /* 自动排列 */
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(1, 30ch);
+    justify-content: center;
+}
+
+.card {
+    animation: slide-fade-in both;
+    /* 使用浏览器的视图时间线,允许动画根据视口的变化进行同步 */
+    animation-timeline: view();
+    /* 定义动画时间范围 */
+    animation-range: contain 0% contain 50%;
+    border: #d7b3e3 outset 8px;
+    border-radius: 10px;
+    line-height: 6;
+    box-shadow: 0px 8px 20px #00000022;
+    font-size: 32px;
+    letter-spacing: 5px;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom right,
+    #91defe,
+    #99c0f9,
+    #bdb6ec,
+    #d7b3e3,
+    #efb3d5,
+    #f9bccc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
+
+.card p {
+    text-indent: 1.2em;
+    font-size: 1.2em;
+    line-height: 1.6;
+    padding: 5px;
+    margin: 5px;
+    font-family: "Comic Sans MS";
+    color: lightcyan;
+}
+
+.card:nth-of-type(4n) {
+    grid-column: span 2;
+}
+
+.card:nth-of-type(5n) {
+    grid-column: span 2;
+}
+
+.card:nth-of-type(7n) {
+    grid-row: span 2;
+}
+
+.footer {
+    /*    position:sticky;*/
+    padding: 5px;
+    text-align: center;
+    background: #bdb6ec;
+    bottom: 0;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+    body {
+        font-family: Arial;
+        padding: 10px;
+        background-image: url("../img/background1.png");
+        background-size: 100%; /* 宽度设为100%，高度自动调整 */
+        background-attachment: fixed; /* 关键属性，使背景固定 */
+        background-position: center;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+
+}
+
+/* 当屏幕宽度至少为600px时，设置为2列 */
+@media (min-width: 600px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 当屏幕宽度至少为900px时，设置为3列 */
+@media (min-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 当屏幕宽度至少为1200px时，设置为4列 */
+@media (min-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

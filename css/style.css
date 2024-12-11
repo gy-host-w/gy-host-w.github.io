@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background-image: url("../img/background.png");
+    background-size: 100%; /* 宽度设为100%，高度自动调整 */
+    background-attachment: fixed; /* 关键属性，使背景固定 */
+    background-position: center;
+}
+
+/* Header/Blog Title */
+.header {
+    display: flex;
+    align-items: center;
+}
+.header img{
+    height: 70px;
+    margin-left:10px;
+}
+.header h1 {
+    flex: auto;
+    font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    position: sticky;
+    overflow: hidden;
+    background-color: #bdb6ec;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #91defe;
+    color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: plum;
+    padding-left: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-image: linear-gradient(to bottom right,
+    #91defe,
+    #99c0f9,
+    #bdb6ec,
+    #d7b3e3,
+    #efb3d5,
+    #f9bccc);;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Fake image */
+.card img {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+
+
+
+/* Clear floats after the columns */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.footer {
+    /*    position:sticky;*/
+    padding: 5px;
+    text-align: center;
+    background: #bdb6ec;
+    bottom: 0;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+    body {
+        font-family: Arial;
+        padding: 10px;
+        background-image: url("../img/background1.png");
+        background-size: 100%; /* 宽度设为100%，高度自动调整 */
+        background-attachment: fixed; /* 关键属性，使背景固定 */
+        background-position: center;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+
+}

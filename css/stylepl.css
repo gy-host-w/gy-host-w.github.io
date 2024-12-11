@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background-image: url("../img/background.png");
+    background-size: 100%; /* 宽度设为100%，高度自动调整 */
+    background-attachment: fixed; /* 关键属性，使背景固定 */
+    background-position: center;
+}
+
+/* Header/Blog Title */
+.header {
+    display: flex;
+    align-items: center;
+}
+.header img{
+    height: 70px;
+    margin-left:10px;
+}
+.header h1 {
+    flex: auto;
+    font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    position: sticky;
+    overflow: hidden;
+    background-color: #bdb6ec;
+}
+
+/* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #91defe;
+    color: black;
+}
+
+.music{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.title {
+    font-weight: 400;
+    font-size: 2em;
+    color: lightcoral;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.player {
+    position: relative;
+    width: 500px;
+    min-height: 100px;
+    background: pink;
+    opacity: 70%;
+    border: 2px solid #fff;
+    border-radius: 80px;
+    padding: 20px 30px;
+    box-shadow: -10px -10px 15px#fff,
+    10px 10px 15px rgba(0,0,0,0.1),
+    inset -5px -5px 15px #fff,
+    inset 5px 5px 15px rgba(0,0,0,0.1) ;
+}
+
+.btns {
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* background: red; */
+
+}
+.btns div {
+    position: relative;
+    width: 80px;
+    height:80px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    cursor: pointer;
+    box-shadow: inset 0 -5px 5px rgba(0,0,0,0.1),
+    0 5px 10px rgba(0,0,0,0.1),
+    0 10px 15px rgba(0,0,0,0.1);
+
+}
+.btns div:active,
+.btns div.active
+{
+    color:coral;
+    box-shadow: inset 0 -2px 5px rgba(0,0,0,0.15),
+    inset 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.btns .playPause {
+    height: 100px;
+    width: 100px;
+
+}
+.btns .material-icons {
+    font-size: 2em;
+
+}
+.btns .playPause span {
+    font-size: 3em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: lightpink;
+}
+tr:nth-child(even) {
+    background-color: #f9bccc;
+}
+    /* Footer */
+
+.footer {
+    /*    position:sticky;*/
+    padding: 5px;
+    text-align: center;
+    background: #bdb6ec;
+    bottom: 0;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+
+    body {
+        font-family: Arial;
+        padding: 10px;
+        background-image: url("../img/background1.png");
+        background-size: 100%; /* 宽度设为100%，高度自动调整 */
+        background-attachment: fixed; /* 关键属性，使背景固定 */
+        background-position: center;
+    }
+}
+ /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}

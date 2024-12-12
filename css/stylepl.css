@@ -30,7 +30,7 @@ body {
     position: sticky;
     overflow: hidden;
     background-color: #bdb6ec;
-    opacity: 70%;
+    opacity: 75%;
 }
 
 /* Style the topnav links */
@@ -152,6 +152,7 @@ tr:nth-child(even) {
     text-align: center;
     background: #bdb6ec;
     bottom: 0;
+    opacity: 75%;
 }
 
 

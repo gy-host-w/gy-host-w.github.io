@@ -30,6 +30,7 @@ body {
     position: sticky;
     overflow: hidden;
     background-color: #bdb6ec;
+    opacity: 70%;
 }
 
 /* Style the topnav links */
